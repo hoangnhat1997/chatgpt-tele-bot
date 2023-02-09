@@ -19,7 +19,7 @@ export class TeleUpdate {
 
     const message = ctx.message as Message.TextMessage;
 
-    await this.teleService.sendAnswer(message.text);
+    await this.teleService.sendQuestion(message.text);
 
     await ctx.reply('reply: ' + message.text);
   }
