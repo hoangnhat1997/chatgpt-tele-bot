@@ -18,10 +18,24 @@ export class TeleUpdate {
     await ctx.reply('Welcome');
   }
 
+  @Hears('@hi')
+  public async onHears(@Ctx() ctx: Scenes.SceneContext) {
+    // const message = ctx.message as Message.TextMessage;
+
+    // await ctx.sendChatAction('typing');
+
+    // const data = await this.prisma.user.findFirst({
+    //   where: {
+    //     firstName: 'Hoang Nhat',
+    //   },
+    // });
+    // await ctx.reply(data.firstName);
+
+    // console.log('Search');
+    await ctx.reply('Hello Nhat Pham');
+  }
   @On('text')
   public async onMessage(@Ctx() ctx: Scenes.SceneContext) {
-    // console.log(ctx.message.from.id);
-
     const message = ctx.message as Message.TextMessage;
 
     await ctx.sendChatAction('typing');
@@ -44,18 +58,4 @@ export class TeleUpdate {
       console.log(error);
     }
   }
-  // @Hears('hi')
-  // public async onMessageSearch(@Ctx() ctx: Scenes.SceneContext) {
-  //   const message = ctx.message as Message.TextMessage;
-
-  //   await ctx.sendChatAction('typing');
-
-  //   const data = await this.prisma.user.findFirst({
-  //     where: {
-  //       firstName: 'Hoang Nhat',
-  //     },
-  //   });
-  //   await ctx.reply(data.firstName);
-  //   console.log('Search');
-  // }
 }
