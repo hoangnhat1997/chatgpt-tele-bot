@@ -5,12 +5,13 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { TeleModule } from './tele/tele.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { env } from 'process';
 
 @Module({
   controllers: [AppController],
   imports: [
     TelegrafModule.forRoot({
-      token: '6235829440:AAEhLU2uyoFj0zGWRGGNjGnJy0K-zGRpYL0',
+      token: process.env.TELEGRAM_TOKEN,
     }),
     TeleModule,
     PrismaModule,

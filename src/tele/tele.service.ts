@@ -15,7 +15,7 @@ export class TeleService {
       const { ChatGPTAPI } = await importDynamic('chatgpt');
 
       this.api = new ChatGPTAPI({
-        apiKey: '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',
+        apiKey: process.env.CHATGPT_APIKEY,
       });
     })();
   }
